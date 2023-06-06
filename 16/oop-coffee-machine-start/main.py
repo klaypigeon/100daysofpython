@@ -9,7 +9,7 @@ my_menu = Menu()
 my_mm = MoneyMachine()
 
 def get_order():
-    order = input("What would you like? (espresso/latte/cappuccino):")
+    order = input(f"What would you like? ({my_menu.get_items()}):")
     if order == "off":
         exit()
     elif order == "report":
@@ -30,14 +30,11 @@ def make_coffee(order):
     if not my_cm.is_resource_sufficient(drink):
         return
     if not has_money:
-        print("Sorry that's not enough money. Money refunded.")
         return
-
     else:
         my_cm.make_coffee(drink)
 
 def check_money(mydrink):
-    print(mydrink)
     cost = mydrink.cost
     print(f"Your {mydrink.name} will cost: ${cost}")
     if my_mm.make_payment(cost):
