@@ -1,5 +1,4 @@
 import pandas
-import csv
 '''import csv
 temperatures = []
 
@@ -10,7 +9,6 @@ with open("weather_data.csv") as f:
             temperatures.append(int(row[1]))
 
 print(temperatures)'''
-
 
 
 # tempsum = 0
@@ -37,11 +35,8 @@ for color in ["Gray", "Cinnamon", "Black"]:
     count = c_rows["Unique Squirrel ID"].count()
     data_dict["Count"].append(count)
 
-# Pandas dataframes constructor import dicts natively and applies the keys as column names
+# Pandas dataframes constructor imports dicts natively and applies the keys as column names
 df = pandas.DataFrame(data_dict)
 df.to_csv("squirrel_count.csv")
 print(data_dict)
 print(df)
-
-
-
